@@ -1,9 +1,10 @@
 @extends('layouts.app')
 @section('content')
+<x-layout bodyClass="g-sidenav-show  bg-gray-200">
 
-
-<form class="add-case-form" action="/MyClients/Affaires/cases" method="POST" >@csrf
-  <h2 class="text-primary fw-bold text-decoration-underline">Add a New Case</h2>
+<div class="p-6">
+<form class=" add-case-form" action="/MyClients/Affaires/cases" method="POST" >@csrf
+  <h2 class="text-primary fw-bold">Add a New Case</h2>
   <div class="row">
   <div class="col">
   <div class="form-group">
@@ -58,7 +59,7 @@
     <a href="/MyClients/" type="submit" class="btn btn-outline-secondary">Annuler</a>
 </div>
 </form>
-
+</div>
 <style>
   
 
@@ -101,3 +102,4 @@
 
 </style>
 @endsection
+</x-layout>

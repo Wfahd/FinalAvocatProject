@@ -6,8 +6,6 @@ use Illuminate\Http\Request;
 use App\Models\Affaire;
 use App\Models\Client;
 
-
-
 class AffairesController extends Controller
 {
     /**
@@ -15,8 +13,7 @@ class AffairesController extends Controller
      */
     public function index()
     {
-        return view('Affaires.cases') 
-        ->with('affaires',Affaire::all()) ;
+        return view('Affaires.cases')->with('affaires', Affaire::all());
     }
 
     /**
@@ -24,38 +21,27 @@ class AffairesController extends Controller
      */
     public function create()
     {
-       return view('Affaires.createCase') 
-         ->with('client',Client::get())             ; 
+        return view('Affaires.createCase')->with('client', Client::get());
     }
- 
- 
+
     /**
      * Store a newly created resource in storage.
      */
-   public function store(Request $request)
-{
+    public function store(Request $request)
+    {
+        $client = Client::where('user_id', Auth()->user()->id)->first();
+        
+        Affaire::create([
+            'Name' => $request->input('name'),
+            'Description' => $request->input('Description'),
+            'status' => $request->input('status'),
+            'client_id' => $request->input('client_id'),
+            'priorité' => $request->input('priorité')
+        ]);
 
-   /* $model = Affaire::find($request->id);
-    $date = $model->created_at;
-    $formattedDate = Carbon::parse($date)->format('d M Y');*/
+        return redirect('/MyClients');
+    }
 
-
-
-    $client = Client::where('user_id', Auth()->user()->id)->first();
-    
-    Affaire::create([
-        'Name' => $request->input('name'),
-        'Description' => $request->input('Description'),
-        'status' => $request->input('status'),
-        'client_id' => $request->input('client_id'),
-        'priorité' => $request->input('priorité'),
-
-        /*'created_at' =>$formattedDate,*/
-    ]);
-
-
-    return redirect('/MyClients');
-}
     /**
      * Display the specified resource.
      */
@@ -70,17 +56,28 @@ class AffairesController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
-        //
+        $affaire = Affaire::findOrFail($id);
+        return view('Affaires.editCase', compact('affaire'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
-        //
+        $affaire = Affaire::findOrFail($id);
+        
+        $affaire->update([
+            'Name' => $request->input('name'),
+            'Description' => $request->input('Description'),
+            'status' => $request->input('status'),
+            'client_id' => $request->input('client_id'),
+            'priorité' => $request->input('priorité')
+        ]);
+
+        return redirect('/MyClients');
     }
 
     /**
@@ -88,6 +85,8 @@ class AffairesController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $affaire = Affaire::findOrFail($id);
+        $affaire->delete();
+        return redirect('/MyClients');
     }
 }
