@@ -96,6 +96,8 @@
 @extends('layouts.app')
 
 @section('content')
+<x-layout bodyClass="g-sidenav-show  bg-gray-200">
+
   <div class="container pt-3">
 
     <div class="card p-4 shadow-lg rounded-lg">
@@ -164,5 +166,6 @@
 </div>
 
 
+</x-layout>
 
 @endsection

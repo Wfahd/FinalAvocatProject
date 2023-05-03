@@ -1,6 +1,9 @@
 @extends('layouts.app')
 @section('content')
-<div class="container pt-4">
+<x-layout bodyClass="g-sidenav-show  bg-gray-200">
+
+<main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+    <!-- Navbar -->
     <h2 class="text-decoration-underline fw-bolder p-4">List of My Clients</h2>
     @if(session('success'))
     <div class="alert alert-success">
@@ -64,8 +67,9 @@
             <a href="/MyClients/Affaires/createCase" class=" btn btn-outline-success fw-bold">Add New Affaire</a>
         
     </div>
-  
-    
+</x-layout>
+
+    @endsection
     
     
 
@@ -75,4 +79,4 @@
 
 
     
-@endsection
+
