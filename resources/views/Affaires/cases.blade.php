@@ -17,6 +17,8 @@
                 <th>Status</th>
                 <th>Date du Creation</th>
                 <th>Action</th>
+                <th>etapes</th>
+
             </tr>
         </thead>
         <tbody class="hhh">
@@ -33,16 +35,18 @@
                 <td class="text-success">{{ $case->status }}</td>
                 @endif
                 <td>{{ $case->created_at }}</td>
-                <td>
-                    <form action="{{ route('affaires.destroy', $case->id) }}" method="POST">
+                <td class="row">
+                    <form class="col" action="{{ route('affaires.destroy', $case->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">Delete</button>
                     </form>
+               
+                <div class="col">
+                    <a href="{{ route('affaires.edit', $case->id) }}" class="btn btn-primary">Edit</a></div>
                 </td>
-                <td>
-                    <a href="{{ route('affaires.edit', $case->id) }}" class="btn btn-primary">Edit</a>
-                </td>
+                <td><a href="{{ route('etapes.index', $case->id) }}">etapes</a></td>
+
             </tr>
             @endforeach
         </tbody>

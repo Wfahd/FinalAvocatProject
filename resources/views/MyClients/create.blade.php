@@ -169,4 +169,3 @@
 </x-layout>
 
 @endsection
-</x-layout>

@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 use App\Models\Client;
+use App\Models\Etape;
+
 
 
 class Affaire extends Model
@@ -27,5 +29,11 @@ class Affaire extends Model
 public function client(){
     return $this->belongsTo(Client::class);
 }
+
+public function Etape(){
+    return $this->hasOne(Etape::class);
+}
+
+
 
 }

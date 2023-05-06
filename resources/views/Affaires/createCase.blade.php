@@ -54,7 +54,7 @@
 </div>
 </div>
 <div class="text-center">
-    <button type="submit" class="btn btn-outline-primary">Submit</button>
+    <button type="submit" class="btn btn-outline-primary">Next</button>
 
     <a href="/MyClients/" type="submit" class="btn btn-outline-secondary">Annuler</a>
 </div>

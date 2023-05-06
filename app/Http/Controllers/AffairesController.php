@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Affaire;
 use App\Models\Client;
+use App\Models\Etape;
+
 
 class AffairesController extends Controller
 {
@@ -29,17 +31,19 @@ class AffairesController extends Controller
      */
     public function store(Request $request)
     {
+
         $client = Client::where('user_id', Auth()->user()->id)->first();
-        
-        Affaire::create([
+
+        $affaire =  Affaire::create([
             'Name' => $request->input('name'),
             'Description' => $request->input('Description'),
             'status' => $request->input('status'),
             'client_id' => $request->input('client_id'),
             'priorité' => $request->input('priorité')
         ]);
+        $id =  $affaire->id ; 
 
-        return redirect('/MyClients');
+        return redirect()->route('etapes.create', ['id' => $id]);
     }
 
     /**
@@ -65,7 +69,7 @@ class AffairesController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,$id)
     {
         $affaire = Affaire::findOrFail($id);
         
@@ -87,6 +91,6 @@ class AffairesController extends Controller
     {
         $affaire = Affaire::findOrFail($id);
         $affaire->delete();
-        return redirect('/MyClients');
+        return redirect()->route('Affaires.cases', ['id' => $id]);
     }
 }
