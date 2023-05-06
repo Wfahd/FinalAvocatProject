@@ -142,15 +142,16 @@
                          <form  action="{{ route('clients.destroy', $item->id) }}" method="POST">
                              @csrf
                              @method('DELETE')
-                             <button type="submit" class="px-4 py-2 bg-red-600 text-white rounded-md">
+                             <button type="submit" class="px-4 py-2 bg-white-600 text-dark  rounded-md">
                                  <i class="fa fa-trash"></i> 
                              </button>
                          </form>
-                         <a href="{{ route('clients.edit', $item->id) }}" class="fa fa-pencil-square-o px-4 py-2 bg-blue-600 text-white rounded-md"></a>
+                         <a href="{{ route('clients.edit', $item->id) }}" class="fa fa-pencil-square-o px-4 py-2 bg-white-600 text- dark rounded-md"></a>
                      </div>
                  </td>
                  <td>
-                     <a href="{{ route('Affaires.cases', ['id' => $item->id]) }}" class="px-4 py-2 bg-primary text-white rounded-md">Voir Les Affaires</a>
+                    <a href="{{ route('Affaires.cases', ['id' => $item->id]) }}" class="px-4 py-2 bg-blue-600 text-white rounded-md">Voir Les Affaires</a>
+
                  </td>
              </tr>
          @endif

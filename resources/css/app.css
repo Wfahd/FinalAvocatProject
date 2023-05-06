@@ -8,15 +8,3 @@
     display: none;
 } 
 @import url('https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/css/bootstrap.min.css');
-.table {
-    margin-bottom: 9rem;
-}
-.text-success {
-    color: green;
-}
-.text-warning {
-    color: orange;
-}
-.hhh{
-    padding-left: 400px;
-}
