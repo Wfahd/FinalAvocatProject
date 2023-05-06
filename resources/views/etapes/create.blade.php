@@ -1,6 +1,10 @@
-@extends('layouts.app')
-@section('content')
+
 <x-layout bodyClass="g-sidenav-show  bg-gray-200">
+   <x-navbars.sidebar activePage='dashboard'></x-navbars.sidebar>
+    
+    <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+                <x-navbars.navs.auth titlePage="My Clients"></x-navbars.navs.auth>
+
     <div class="max-w-md pt-4 mx-auto">
         <form method="POST" action="{{route('etapes.store', ['id' => $affaire->id])}}" class="max-w-md mx-auto p-4 bg-gray-100 rounded-md shadow-md"> @csrf
             <div class="mb-4">
@@ -43,4 +47,3 @@
       
 </x-layout>
 
-  @endsection

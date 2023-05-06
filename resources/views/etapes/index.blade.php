@@ -1,7 +1,10 @@
-@extends('layouts.app')
 
-@section('content')
     <x-layout bodyClass="g-sidenav-show bg-gray-200">
+         <x-navbars.sidebar activePage='dashboard'></x-navbars.sidebar>
+    
+    <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+                <x-navbars.navs.auth titlePage="My Clients"></x-navbars.navs.auth>
+
         <div class="pt-4">
             <div class="progress-item bg-gray-100 p-5 rounded-lg shadow-md" id="progress-item">
                 <div class="flex justify-between items-center mb-4">
@@ -47,7 +50,6 @@
             
         </div>
     </x-layout>
-@endsection
 
 
 

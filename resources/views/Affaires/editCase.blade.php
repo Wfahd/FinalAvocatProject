@@ -1,7 +1,10 @@
-@extends('layouts.app')
 
-@section('content')
 <x-layout bodyClass="g-sidenav-show  bg-gray-200">
+    <x-navbars.sidebar activePage='dashboard'></x-navbars.sidebar>
+    
+    <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+                <x-navbars.navs.auth titlePage="My Clients"></x-navbars.navs.auth>
+
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-8">

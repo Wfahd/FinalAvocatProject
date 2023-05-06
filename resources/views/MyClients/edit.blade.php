@@ -1,9 +1,11 @@
 <!-- resources/views/MyClients/edit.blade.php -->
 
-@extends('layouts.app')
-
-@section('content')
 <x-layout bodyClass="g-sidenav-show  bg-gray-200">
+    <x-navbars.sidebar activePage='dashboard'></x-navbars.sidebar>
+    
+    <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+                <x-navbars.navs.auth titlePage="My Clients"></x-navbars.navs.auth>
+
     <div class="container">
         <h1>Edit Client</h1>
         <form action="{{ route('MyClients.update', $client->id) }}" method="POST">
@@ -43,5 +45,4 @@
             <button type="submit" class="btn btn-primary">Save Changes</button>
         </form>
     </div>
-@endsection
 </x-layout>
