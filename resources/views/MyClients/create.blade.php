@@ -153,10 +153,10 @@
           </div>
         </div>
 
-        <div class="mt-8 flex justify-center">
-          <button type="submit" class="btn-primary px-4 py-2 rounded-md text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50">Submit</button>
+        <div class="mt-4 flex justify-center">
+          <button type="submit" class="btn-primary inline-flex items-center ml-4 px-4 py-2 border border-gray-300 rounded-md text-base font-medium text-gray-700 hover:bg-black-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">Submit</button>
 
-          <a href="/MyClients/" type="submit" class="inline-flex items-center ml-4 px-4 py-2 border border-gray-300 rounded-md text-base font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Annuler</a>
+          <a href="/MyClients/" type="submit" class="btn-primary inline-flex items-center ml-4 px-4 py-2 border border-gray-300 rounded-md text-base font-medium text-gray-700  hover:bg-black-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">Annuler</a>
         </div> 
       </form>
     </div>
@@ -169,3 +169,4 @@
 </x-layout>
 
 @endsection
+</x-layout>

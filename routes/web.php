@@ -35,6 +35,11 @@ Route::middleware([
 
 Route::get('/user-profile', [UserController::class, 'profile'])->name('user-profile');
 Route::get('/user-management', [UserController::class, 'index'])->name('user-management');
+Route::get('/affaires/{id}/edit', [AffairesController::class, 'edit'])->name('affaires.edit');
+Route::put('/affaires/{affaire}', 'AffairesController@update')->name('affaires.update');
+Route::delete('/affaires/{id}', [App\Http\Controllers\AffairesController::class, 'destroy'])->name('affaires.destroy');
+
+
 
 Route::resource('/MyClients', ClientsController::class); 
 Route::resource('/MyClients/Affaires/cases', AffairesController::class); 

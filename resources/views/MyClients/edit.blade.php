@@ -3,6 +3,7 @@
 @extends('layouts.app')
 
 @section('content')
+<x-layout bodyClass="g-sidenav-show  bg-gray-200">
     <div class="container">
         <h1>Edit Client</h1>
         <form action="{{ route('MyClients.update', $client->id) }}" method="POST">
@@ -43,3 +44,4 @@
         </form>
     </div>
 @endsection
+</x-layout>

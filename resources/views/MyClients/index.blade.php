@@ -1,19 +1,17 @@
+{{-- 
 @extends('layouts.app')
 @section('content')
-<x-layout bodyClass="g-sidenav-show  bg-gray-200">
 
-<main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
-    <!-- Navbar -->
-    <h2 class="text-decoration-underline fw-bolder p-4">List of My Clients</h2>
     @if(session('success'))
     <div class="alert alert-success">
         {{ session('success') }}
     </div>
     @endif
-    <table class="table">
+    <table class="table" width="100%" >
+
         <thead class="thead-dark">
-            <tr>
-                <th scope="col">#</th>
+            <tr style=" border-collapse: collapse;">
+                <th  scope="col">#</th>
                 <th scope="col">Name</th>
                 <th scope="col">Last Name</th>
                 <th scope="col">Email</th>
@@ -21,7 +19,7 @@
                 <th scope="col">Status</th>
                 <th scope="col">Sex</th>
                 <th scope="col">Actions</th>
-                <th scope="col">hhh</th>
+                <th scope="col">Les affaires</th>
             </tr>
         </thead>
         <tbody>
@@ -80,3 +78,7 @@
 
     
 
+    
+@endsection
+
+@endsection
