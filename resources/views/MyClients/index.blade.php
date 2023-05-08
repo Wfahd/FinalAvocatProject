@@ -140,20 +140,17 @@
                  <td>{{ $item->status }}</td>
                  <td>{{ $item->sex }}</td>
                  <td>
-                    <div class="row">
-                        <form class="col" action="{{ route('clients.destroy', $item->id) }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="px-4 py-2 bg-white-500 text-dark rounded-md mr-4 border-none">
-                                <i class="fas fa-trash-alt"></i>
-                            </button>
-                            
-                        </form>
-                    
-                        <a href="{{ route('clients.edit', $item->id) }}" class="col fa fa-pencil-square-o px-4 py-2 bg-white-200 text-dark rounded-md"></a>
-                    </div>
-                    
-                
+                     <div class="flex justify-center items-center space-x-4">
+                         <form  action="{{ route('clients.destroy', $item->id) }}" method="POST">
+                             @csrf
+                             @method('DELETE')
+                             <button type="submit" class="px-4 py-2 bg-red-600 text-white rounded-md">
+                                 <i class="fa fa-trash text-danger"></i> 
+                             </button>
+                         </form>
+                         <a href="{{ route('clients.edit', $item->id) }}" class="fa fa-pencil-square-o px-4 py-2 bg-blue-600 text-white rounded-md"></a>
+                     </div>
+                 </td>
                  <td>
                      <a href="{{ route('Affaires.cases', ['id' => $item->id]) }}" class="px-4 py-2 bg-info text-white rounded-md">Voir les Affaires</a>
                  </td>
@@ -164,10 +161,9 @@
 </table>
 
 <div class="text-center mt-8">
-  <a href="/MyClients/create" class="px-4 py-2 bg-primary-600 text-white rounded-md mr-4">Add New Client</a>
-  <a href="/MyClients/Affaires/createCase" class="px-4 py-2 bg-green-600 text-white rounded-md">Add New Affaire</a>
+ <a href="/MyClients/create" class="px-4 py-2 bg-green-600 text-white rounded-md mr-4">Add New Client</a>
+ <a href="/MyClients/Affaires/createCase" class="px-4 py-2 bg-green-600 text-white rounded-md">Add New Affaire</a>
 </div>
-
 </div>
 </main>
 <style>

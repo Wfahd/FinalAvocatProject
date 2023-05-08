@@ -5,6 +5,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ClientsController; 
 use App\Http\Controllers\AffairesController; 
 use App\Http\Controllers\Etapescontroller; 
+use App\Http\Controllers\ArchiveController; 
+
 
 
 
@@ -40,12 +42,17 @@ Route::get('/user-management', [UserController::class, 'index'])->name('user-man
 Route::get('/affaires/{id}/edit', [AffairesController::class, 'edit'])->name('affaires.edit');
 Route::put('/affaires/{affaire}', 'AffairesController@update')->name('affaires.update');
 Route::delete('/affaires/{id}', [App\Http\Controllers\AffairesController::class, 'destroy'])->name('affaires.destroy');
-Route::resource('/MyClients/Affaires/etapes', Etapescontroller::class); 
+Route::resource('/MyClients/Affaires/etapes', Etapescontroller::class);
 
 
 Route::get('/MyClients/Affaires/etapes/{id}', [Etapescontroller::class, 'index'])->name('etapes.index');
 Route::get('/MyClients/Affaires/etapes/add/{id}', [Etapescontroller::class, 'create'] )->name('etapes.create'); 
 Route::post('/MyClients/Affaires/etapes/store/{id}', [Etapescontroller::class, 'store'] )->name('etapes.store'); 
+
+
+Route::resource('/MyClients/Affaires/archives', ArchiveController::class); 
+
+Route::post('/cases/archive/{id}', [AffairesController::class, 'archive'])->name('affaires.archive');
 
 
 

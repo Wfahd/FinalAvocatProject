@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Affaire;
 use App\Models\Client;
 use App\Models\Etape;
+use App\Models\ArchivedCase;
+
 
 
 class AffairesController extends Controller
@@ -93,4 +95,26 @@ class AffairesController extends Controller
         $affaire->delete();
         return redirect()->route('Affaires.cases', ['id' => $id]);
     }
+
+
+    public function archive($id)
+    {
+        $case = Affaire::find($id);
+    
+        ArchivedCase::create([
+            'Name' => $case->Name,
+            'Description' => $case->Description,
+             'status' => $case->status,
+
+          'client_id' =>  $case->client_id,
+          'priorité' =>  $case->priorité,
+
+        ]);
+    
+        $case->delete();
+    
+        return redirect('/MyClients');
+    }
+    
+
 }

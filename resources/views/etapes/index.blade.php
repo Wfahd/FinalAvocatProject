@@ -27,6 +27,32 @@
             <a href="{{ route('etapes.edit', $etapes->id) }}" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" id="edit-button">
                 <i class="fas fa-pencil-alt"></i>
             </a>
+            <form method="POST" action="{{ route('cases.archive', $affaire->id) }}">
+                @csrf
+                <button type="submit">Archive Case</button>
+            </form>
+            
+
+            <script>
+                const progressItem = document.getElementById("progress-item");
+                const editButton = document.getElementById("edit-button");
+
+                // Set initial state of progress item to not editable
+                progressItem.contentEditable = false;
+
+                // Add click event listener to edit button
+                editButton.addEventListener("click", () => {
+                    if (progressItem.contentEditable === "true") {
+                        // Disable editing mode
+                        progressItem.contentEditable = false;
+                        editButton.textContent = "Edit";
+                    } else {
+                        // Enable editing mode
+                        progressItem.contentEditable = true;
+                        editButton.textContent = "Save";
+                    }
+                });
+            </script>
             
 
         </div>
