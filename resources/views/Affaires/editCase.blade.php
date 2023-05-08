@@ -1,9 +1,11 @@
-@extends('layouts.app')
 
 @section('content')
-    <x-layout bodyClass="g-sidenav-show  bg-gray-200">
-        <div class="container mx-auto px-4">
-            <h1 class="text-4xl font-bold my-6 text-center">Edit Affaire</h1>
+<x-layout bodyClass="g-sidenav-show  bg-gray-200">
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card bg-white shadow">
+                    <h1>Edit Affiare</h1>
 
             <form action="{{ route('affaires.update', $affaire->id) }}" method="POST" class="max-w-md mx-auto">
                 @csrf

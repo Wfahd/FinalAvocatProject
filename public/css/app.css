@@ -1,3 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/css/bootstrap.min.css');
 
 .navbar {
   background-color: #3498db;

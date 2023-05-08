@@ -96,11 +96,13 @@
  --}}
 
 
-
-
- @extends('layouts.app')
- @section('content')
  <x-layout bodyClass="g-sidenav-show  bg-gray-200">
+    <x-navbars.sidebar activePage='dashboard'></x-navbars.sidebar>
+    
+    <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+                <x-navbars.navs.auth titlePage="My Clients"></x-navbars.navs.auth>
+
+
  <div class="container pt-4">
      <div class="text-center">
          <h2 class="fw-bolder p-4 mx-auto" style="font-size: 2em;">List of My Clients</h2>
@@ -142,7 +144,7 @@
                          <form  action="{{ route('clients.destroy', $item->id) }}" method="POST">
                              @csrf
                              @method('DELETE')
-                             <button type="submit" class="px-4 py-2 bg-white-600 text-dark  rounded-md">
+                             <button type="submit" class="px-4 py-2 bg-red-600 text-white rounded-md">
                                  <i class="fa fa-trash"></i> 
                              </button>
                          </form>
@@ -150,8 +152,7 @@
                      </div>
                  </td>
                  <td>
-                    <a href="{{ route('Affaires.cases', ['id' => $item->id]) }}" class="px-4 py-2 bg-blue-600 text-white rounded-md">Voir Les Affaires</a>
-
+                     <a href="{{ route('Affaires.cases', ['id' => $item->id]) }}" class="px-4 py-2 bg-primary text-white rounded-md">Voir Les Affaires</a>
                  </td>
              </tr>
          @endif
@@ -164,7 +165,14 @@
  <a href="/MyClients/Affaires/createCase" class="px-4 py-2 bg-green-600 text-white rounded-md">Add New Affaire</a>
 </div>
 </div>
+</main>
+<style>
+     @tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+</style>
+
 </x-layout>
 
 
-@endsection
