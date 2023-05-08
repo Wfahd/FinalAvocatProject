@@ -140,19 +140,22 @@
                  <td>{{ $item->status }}</td>
                  <td>{{ $item->sex }}</td>
                  <td>
-                     <div class="flex justify-center items-center space-x-4">
-                         <form  action="{{ route('clients.destroy', $item->id) }}" method="POST">
-                             @csrf
-                             @method('DELETE')
-                             <button type="submit" class="px-4 py-2 bg-red-600 text-white rounded-md">
-                                 <i class="fa fa-trash"></i> 
-                             </button>
-                         </form>
-                         <a href="{{ route('clients.edit', $item->id) }}" class="fa fa-pencil-square-o px-4 py-2 bg-white-600 text- dark rounded-md"></a>
-                     </div>
-                 </td>
+                    <div class="row">
+                        <form class="col" action="{{ route('clients.destroy', $item->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="px-4 py-2 bg-white-500 text-dark rounded-md mr-4 border-none">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                            
+                        </form>
+                    
+                        <a href="{{ route('clients.edit', $item->id) }}" class="col fa fa-pencil-square-o px-4 py-2 bg-white-200 text-dark rounded-md"></a>
+                    </div>
+                    
+                
                  <td>
-                     <a href="{{ route('Affaires.cases', ['id' => $item->id]) }}" class="px-4 py-2 bg-primary text-white rounded-md">Voir Les Affaires</a>
+                     <a href="{{ route('Affaires.cases', ['id' => $item->id]) }}" class="px-4 py-2 bg-info text-white rounded-md">Voir les Affaires</a>
                  </td>
              </tr>
          @endif
@@ -161,18 +164,150 @@
 </table>
 
 <div class="text-center mt-8">
- <a href="/MyClients/create" class="px-4 py-2 bg-green-600 text-white rounded-md mr-4">Add New Client</a>
- <a href="/MyClients/Affaires/createCase" class="px-4 py-2 bg-green-600 text-white rounded-md">Add New Affaire</a>
+  <a href="/MyClients/create" class="px-4 py-2 bg-primary-600 text-white rounded-md mr-4">Add New Client</a>
+  <a href="/MyClients/Affaires/createCase" class="px-4 py-2 bg-green-600 text-white rounded-md">Add New Affaire</a>
 </div>
+
 </div>
 </main>
 <style>
-     @tailwind base;
-@tailwind components;
-@tailwind utilities;
+ /* .container {
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
 
-</style>
+.alert {
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  color: #155724;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border-radius: 0.25rem;
+}
 
-</x-layout>
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529;
+  border-collapse: collapse;
+}
+
+.table td,
+.table th {
+  padding: 1rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+}
+
+.table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dee2e6;
+  background-color: #212529;
+  color: #fff;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.bg-gray-900 {
+  background-color: #1a202c;
+}
+
+.bg-gray-200 {
+  background-color: #edf2f7;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.fw-bolder {
+  font-weight: 700;
+}
+
+.max-height-vh-100 {
+  max-height: 100vh;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.border-radius-lg {
+  border-radius: 0.5rem;
+}
+
+.space-x-4 > * + * {
+  margin-left: 1rem;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.bg-red-600 {
+  background-color: #dc2626;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.rounded-md {
+  border-radius: 0.375rem;
+}
+
+.fa-trash {
+  font-family: "Font Awesome 5 Solid";
+  /* content: "\f2ed"; */
+}
+
+.fa-pencil-square-o {
+  font-family: "Font Awesome 5 Solid";
+  /* content: "\f044"; */
+}
+
+.bg-white-600 {
+  background-color: #fff;
+}
+
+.text-dark {
+  color: #333;
+}
+
+.bg-primary {
+  background-color: #0d6efd;
+}
+
+.bg-green-600 {
+  background-color: #059669;
+}
+
+.bg-info {
+  background-color: #0dcaf0;
+}
+
+</style> */
+
+</x-layout> 
 
 

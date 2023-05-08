@@ -17,6 +17,15 @@
 <html lang="en">
 
 <head>
+    
+    <link rel="stylesheet" href="{{ asset('fontawesome/css/all.min.css') }}">
+
+   
+        <!-- other meta tags and stylesheets -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-CmNE+PEO20HmYihp9SKR83L/i/O4/F4/ryP3jB3w2MpqMxS1+0Nv3Gn3BXz6VjUZFYnU6fBuAA69OkAtn6V5cQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    
+      
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 

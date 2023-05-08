@@ -37,21 +37,21 @@ class Etapescontroller extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-        
-        $etape = Etape::create([
-            'deadline' => $request->input('deadline'),
-            'next_steps' => $request->input('next_step'),
-            'notes' => $request->input('notes'),
-            'document' => $request->input('document'),
-            'affaire_id' => $request->input('case-id')
-        ]);
-        $case = $etape->Affaire ; 
+  public function store(Request $request)
+{
+    $etape = Etape::create([
+        'deadline' => $request->input('deadline'),
+        'next_steps' => $request->input('next_step'),
+        'notes' => $request->input('notes'),
+        'document' => $request->input('document'),
+        'affaire_id' => $request->input('case_id')
+    ]);
 
-        return redirect('/MyClients');
+    $case = $etape->Affaire; 
 
-    }
+    return redirect('/MyClients');
+}
+
 
     /**
      * Display the specified resource.
@@ -66,18 +66,28 @@ class Etapescontroller extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
-        //
+        $etape = Etape::findOrFail($id);
+        return view('etapes.edit', compact('etape'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
-        //
+        $etape = Etape::findOrFail($id);
+
+        $etape->deadline = $request->input('deadline');
+        $etape->next_steps = $request->input('next_step');
+        $etape->notes = $request->input('notes');
+        $etape->document = $request->input('document');
+        $etape->save();
+
+        return redirect('/MyClients');
     }
+
 
     /**
      * Remove the specified resource from storage.
