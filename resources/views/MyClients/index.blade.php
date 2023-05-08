@@ -140,15 +140,16 @@
                  <td>{{ $item->status }}</td>
                  <td>{{ $item->sex }}</td>
                  <td>
-                     <div class="flex justify-center items-center space-x-4">
-                         <form  action="{{ route('clients.destroy', $item->id) }}" method="POST">
+                     <div class="row">
+
+                         <form class="col"  action="{{ route('clients.destroy', $item->id) }}" method="POST">
                              @csrf
                              @method('DELETE')
                              <button type="submit" class="px-4 py-2 bg-red-600 text-white rounded-md">
                                  <i class="fa fa-trash text-danger"></i> 
                              </button>
                          </form>
-                         <a href="{{ route('clients.edit', $item->id) }}" class="fa fa-pencil-square-o px-4 py-2 bg-blue-600 text-white rounded-md"></a>
+                         <a href="{{ route('clients.edit', $item->id) }}" class="col fa fa-pencil-square-o px-4 py-2 bg-blue-600 text-white rounded-md"></a>
                      </div>
                  </td>
                  <td>
@@ -160,10 +161,12 @@
  </tbody>
 </table>
 
-<div class="text-center mt-8">
- <a href="/MyClients/create" class="px-4 py-2 bg-green-600 text-white rounded-md mr-4">Add New Client</a>
- <a href="/MyClients/Affaires/createCase" class="px-4 py-2 bg-green-600 text-white rounded-md">Add New Affaire</a>
-</div>
+<div class="flex justify-between">
+    <a href="/MyClients/create" class="bg-blue-500 hover:bg-blue-700  font-bold py-2 px-4 border border-gray-500 rounded">Add New Client</a>
+    <a href="/MyClients/Affaires/createCase" class="bg-blue-500 hover:bg-blue-700  font-bold py-2 px-4 border border-gray-500 rounded">Add New Affaire</a>
+    <a href="/MyClients/Affaires/archives" class="bg-blue-500 hover:bg-blue-700  font-bold py-2 px-4 border border-gray-500 rounded">Archived Cases</a>
+  </div>
+  
 </div>
 </main>
 <style>

@@ -30,7 +30,7 @@
             <tr class="table-row" data-url="{{ route('affaires.edit', $case->id) }}">
                 <td>{{ $case->id }}</td>
                 <td>{{ $case->Name }}</td>
-                <td class="truncate" style="max-width: 200px;">{{ $case->Description }}</td>
+                <td class="truncate case-description" style="max-width: 200px;">{{ $case->Description }}</td>
                 <td>{{ $case->priorité }}</td>
                 @if ($case->status === 'In Progress')
                 <td class="text-warning">{{ $case->status }}</td>
@@ -39,14 +39,22 @@
                 @endif
                 <td>{{ $case->created_at }}</td>
                 <td class="row">
+                    <div class="roz"></div>
                     <form class="col" action="{{ route('affaires.destroy', $case->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">Delete</button>
                     </form>
                
-                <div class="col">
-                    <a href="{{ route('affaires.edit', $case->id) }}" class="btn btn-primary">Edit</a></div>
+                <div class="pr-5 col">
+                    <a href="{{ route('affaires.edit', $case->id) }}" class=" btn btn-primary">Edit</a></div>
+                    @if ($case->status === 'Completed')
+                    <form class="col" method="POST" action="/cases/archive/{{ $case->id }}">
+                        @csrf
+                        <button type="submit" class="fa-solid fa-box-archive btn btn-info">Archive Case</button>
+                    </form> 
+                    @endif
+                    
                 </td>
                 <td><a href="{{ route('etapes.index', $case->id) }}">etapes</a></td>
 
@@ -62,6 +70,14 @@
     @endif
 
 </div>
+<style>
+    .case-description {
+        width: 200px; /* Adjust the width as needed */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+</style>
 
 <script>
     // Add click event listener to table rows

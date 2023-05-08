@@ -26,6 +26,11 @@
                 </div>
                 <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" id="edit-button">Edit</button>
             </div>
+            <form method="POST" action="{{ route('cases.archive', $affaire->id) }}">
+                @csrf
+                <button type="submit">Archive Case</button>
+            </form>
+            
 
             <script>
                 const progressItem = document.getElementById("progress-item");
