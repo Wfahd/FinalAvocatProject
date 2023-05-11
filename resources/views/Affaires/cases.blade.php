@@ -41,7 +41,6 @@
                 @endif
                 <td>{{ $case->created_at }}</td>
                 <td class="row">
-                    <div class="roz"></div>
                     <form class="col" action="{{ route('affaires.destroy', $case->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
@@ -52,7 +51,7 @@
                
 
                 <div class="col">
-                    <a href="{{ route('affaires.edit', $case->id) }}" class="btn btn-dark"><i class="fa fa-pencil-square-o  bg-white-300 text-white rounded-md"></i></a>
+                    <a href="{{ route('affaires.edit', $case->id) }}" class="btn btn-dark"><i class="fa fa-pencil-square-o pr-4 bg-white-300 text-white"></i></a>
 
 
                 {{-- <div class="pr-5 col">

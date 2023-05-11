@@ -27,7 +27,7 @@
             <a href="{{ route('etapes.edit', $etapes->id) }}" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" id="edit-button">
                 <i class="fas fa-pencil-alt"></i>
             </a>
-            <form method="POST" action="{{ route('cases.archive', $affaire->id) }}">
+            <form method="POST" action="{{ route('affaires.archive', $affaire->id) }}">
                 @csrf
                 <button type="submit">Archive Case</button>
             </form>
