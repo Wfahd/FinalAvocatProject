@@ -1,5 +1,4 @@
 
-@section('content')
 <x-layout bodyClass="g-sidenav-show  bg-gray-200">
     <div class="container mt-5">
         <div class="row justify-content-center">
@@ -49,5 +48,4 @@
             </form>
         </div>
     </x-layout>
-@endsection
 
