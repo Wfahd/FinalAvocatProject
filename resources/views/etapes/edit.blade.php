@@ -83,5 +83,66 @@
                         </form>
                     </div>
                 </div>
+                <style>
+                .container {
+                    margin: 0 auto;
+                    max-width: 800px;
+                    padding: 20px;
+                  }
+                  
+                  .card {
+                    background-color: #fff;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+                    margin-bottom: 20px;
+                  }
+                  
+                  .card-header {
+                    background-color: #f5f5f5;
+                    border-bottom: 1px solid #ccc;
+                    padding: 10px 20px;
+                  }
+                  
+                  .card-body {
+                    padding: 20px;
+                  }
+                  
+                  .form-group {
+                    margin-bottom: 20px;
+                  }
+                  
+                  .col-form-label {
+                    font-weight: bold;
+                  }
+                  
+                  .btn-primary {
+                    background-color: #007bff;
+                    border-color: #007bff;
+                    color: #fff;
+                  }
+                  input[type="text"], textarea {
+  background-color: transparent;
+  border: 2 px;
+}
+
+                  
+                  .btn-primary:hover {
+                    background-color: #0069d9;
+                    border-color: #0062cc;
+                    color: #fff;
+                  }
+                  
+                  .btn-secondary {
+                    background-color: #6c757d;
+                    border-color: #6c757d;
+                    color: #fff;
+                  }
+                  
+                  .btn-secondary:hover {
+                    background-color: #5a6268;
+                    border-color: #545b62;
+                    color: #fff;
+                  }
+                </style>
             </x-layout>
-            

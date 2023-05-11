@@ -40,31 +40,29 @@
                 <td class="text-success">{{ $case->status }}</td>
                 @endif
                 <td>{{ $case->created_at }}</td>
-                <td class="row">
-                    <form class="col" action="{{ route('affaires.destroy', $case->id) }}" method="POST">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-dark"><i class="fas fa-trash-alt"></i></button>
-
-
-                    </form>
-               
-
+                <td >
+                    <div class="row">
+                        {{-- <form action="{{ route('affaires.destroy', $case->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-dark"><i class="fas fa-trash-alt"></i></button>
+                        </form>  --}}
                 <div class="col">
-                    <a href="{{ route('affaires.edit', $case->id) }}" class="btn btn-dark"><i class="fa fa-pencil-square-o pr-4 bg-white-300 text-white"></i></a>
-
-
-                {{-- <div class="pr-5 col">
-                    <a href="{{ route('affaires.edit', $case->id) }}" class=" btn btn-primary">Edit</a></div> --}}
+                        <a href="{{ route('affaires.edit', $case->id) }}" class=" btn btn-dark"><i class="fa fa-pencil-square-o bg-white-300 text-white"></i></a></div>
+                   
+                    <div class="col-md-8 "> 
                     @if ($case->status === 'Completed')
-                    <form class="col" method="POST" action="/cases/archive/{{ $case->id }}">
-                        @csrf
-                        <button type="submit" class="fa-solid fa-box-archive btn btn-info">Archive Case</button>
-                    </form> 
-                    @endif
+                           <form method="POST" action="/cases/archive/{{ $case->id }}">
+                            @csrf
+                            <button type="submit" class="fa-solid fa-box-archive btn btn-info">Archive</button>
+                        </form>
+                        @endif
+                     </div>
+                    </div>
                     
                 </td>
                 <td>
+                
                 <a href="{{ route('etapes.index', $case->id) }}">etapes</a></td>
 
             </tr>
@@ -88,6 +86,9 @@
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+    }
+    .btn btn-dark {
+        margin-left: 50px;
     }
 </style>
 

@@ -16,7 +16,7 @@
                   <label class="block text-gray-700 font-bold mb-2" for="next_step">
                       Notes
                   </label>
-                  <textarea class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="notes" type="text" placeholder="Next Step"></textarea>
+                  <textarea class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="notes" type="text" placeholder="notes"></textarea>
               </div>
               <div class="mb-4">
                   <label class="block text-gray-700 font-bold mb-2" for="document">
@@ -103,6 +103,10 @@
     button[type="submit"]:hover {
       background-color: #4338ca;
     }
+    .max-w-md {
+  max-width: 45rem;
+}
+
     
     button[type="submit"]:focus {
       outline: none;

@@ -98,8 +98,13 @@ class ClientsController extends Controller
             return redirect('MyClients')->with('error', 'Client not found!');
         }
     
-        $client->delete();
+        try {
+            $client->delete();
+        } catch (\Illuminate\Database\QueryException $e) {
+            return redirect('MyClients')->with('error', 'Cannot delete client because it has associated records in the database!');
+        }
     
         return redirect('MyClients')->with('success'," deleted with success");
     }
+    
 }

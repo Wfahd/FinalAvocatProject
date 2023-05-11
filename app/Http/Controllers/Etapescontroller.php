@@ -6,21 +6,16 @@ use Illuminate\Http\Request;
 use App\Models\Affaire;
 use App\Models\Etape;
 
-
-
-
 class Etapescontroller extends Controller
 {
     /**
  
-    
      */
     public function index($id)
     {
-       $affaire = Affaire::findOrFail($id);
-       $etapes =  $affaire->etape ;  
-       return view('etapes.index', compact('affaire', 'etapes'));
-
+        $affaire = Affaire::findOrFail($id);
+        $etapes = $affaire->etape;
+        return view('etapes.index', compact('affaire', 'etapes'));
     }
 
     /**
@@ -29,29 +24,26 @@ class Etapescontroller extends Controller
     public function create($id)
     {
         $case = Affaire::findOrFail($id);
-
-        return view('etapes.create')
-        -> with('affaire',$case);
+        return view('etapes.create')->with('affaire', $case);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-  public function store(Request $request)
-{
-    $etape = Etape::create([
-        'deadline' => $request->input('deadline'),
-        'next_steps' => $request->input('next_step'),
-        'notes' => $request->input('notes'),
-        'document' => $request->input('document'),
-        'affaire_id' => $request->input('case_id')
-    ]);
+    public function store(Request $request)
+    {
+        $etape = Etape::create([
+            'deadline' => $request->input('deadline'),
+            'next_steps' => $request->input('next_step'),
+            'notes' => $request->input('notes'),
+            'document' => $request->input('document'),
+            'affaire_id' => $request->input('case_id')
+        ]);
 
-    $case = $etape->Affaire; 
+        $case = $etape->Affaire;
 
-    return redirect('/MyClients');
-}
-
+        return redirect('/MyClients');
+    }
 
     /**
      * Display the specified resource.
@@ -59,7 +51,7 @@ class Etapescontroller extends Controller
     public function show(string $id)
     {
         $affaire = Affaire::findOrFail($id);
-        $etapes =  $affaire->etape ;  
+        $etapes = $affaire->etape;
         return view('etapes.index', compact('affaire', 'etapes'));
     }
 
@@ -69,7 +61,7 @@ class Etapescontroller extends Controller
     public function edit($id)
     {
         $etape = Etape::findOrFail($id);
-        return view('etapes.edit', compact('etape'));
+        return view('etapes.edit')->with('etape', $etape);
     }
 
     /**
@@ -78,7 +70,6 @@ class Etapescontroller extends Controller
     public function update(Request $request, $id)
     {
         $etape = Etape::findOrFail($id);
-
         $etape->deadline = $request->input('deadline');
         $etape->next_steps = $request->input('next_step');
         $etape->notes = $request->input('notes');
@@ -87,7 +78,6 @@ class Etapescontroller extends Controller
 
         return redirect('/MyClients');
     }
-
 
     /**
      * Remove the specified resource from storage.
