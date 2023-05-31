@@ -97,7 +97,7 @@
 
 
  <x-layout bodyClass="g-sidenav-show  bg-gray-200">
-    <x-navbars.sidebar activePage='dashboard'></x-navbars.sidebar>
+    <x-navbars.sidebar activePage='tables'></x-navbars.sidebar>
     
     <main class="main-content position-relative max-height-vh-200 h-200 border-radius-lg ">
                 <x-navbars.navs.auth titlePage="My Clients"></x-navbars.navs.auth>
@@ -112,7 +112,7 @@
      {{ session('success') }}
  </div>
 @endif
-
+<div class="card">
 <table class="table w-full">
  <thead class="bg-gray-900 text-white">
      <tr>
@@ -131,7 +131,7 @@
  <tbody>
      @foreach ($clients as $item)
          @if(Auth::user()->id == $item->user_id)
-             <tr>
+             <tr class="text-dark" >
                  <th>{{ $item->id }}</th>
                  <td>{{ $item->name }}</td>
                  <td>{{ $item->lastName }}</td>
@@ -140,8 +140,24 @@
                  <td>{{ $item->status }}</td>
                  <td>{{ $item->sex }}</td>
                  <td>
-                     <div class="flex justify-center items-center space-x-4">
-                         <form  action="{{ route('clients.destroy', $item->id) }}" method="POST">
+                    <div class="row">
+
+                      <form class="col" action="{{ route('clients.destroy', $item->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="px-4 py-2 bg-white text-dark rounded-md mr-4 border-none">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </form>
+                    
+                    
+                        <a href="{{ route('clients.edit', $item->id) }}" class="col fa fa-pencil-square-o px-4 py-2 bg-white-200 text-dark rounded-md"></a>
+                    </div>
+                    
+                
+                     {{-- <div class="row">
+
+                         <form class="col"  action="{{ route('clients.destroy', $item->id) }}" method="POST">
                              @csrf
                              @method('DELETE')
                              <button type="submit" class="px-4 py-2 bg-red-600 text-white rounded-md">
@@ -152,13 +168,17 @@
                      </div>
                  </td>--}}
                  <td>
-                     <a href="{{ route('Affaires.cases', ['id' => $item->id]) }}" class="px-4 py-2 bg-info text-white rounded-md">Voir les Affaires</a>
+
+                     <a href="{{ route('Affaires.cases', ['id' => $item->id]) }}" class="btn-secondary px-4 py-2 bg-info text-white rounded-md">Voir les Affaires</a>
                  </td>
+                 
+
              </tr>
          @endif
      @endforeach
  </tbody>
 </table>
+</div>
 
 <div class="flex justify-between">
     <a href="/MyClients/create" class="bg-blue-500 hover:bg-blue-700  font-bold py-2 px-4 border border-gray-500 rounded">Add New Client</a>
@@ -306,7 +326,126 @@
   background-color: #0dcaf0;
 }
 
-</style> */
+
+
+.flex {
+  display: flex;
+}
+
+/* .justify-between {
+  justify-content: space-between;
+} */
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+.bg-blue-500 {
+  background-color: #444648;
+}
+
+.bg-blue-700 {
+  background-color: #5e6169;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.border {
+  border-width: 1px;
+}
+
+.border-gray-500 {
+  border-color: #6b7280;
+}
+
+.rounded {
+  border-radius: 0.25rem;
+}
+
+.hover\:bg-blue-700:hover {
+  background-color: #35373b;
+}
+
+.btn {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #54565a;
+  color: #fff;
+  border: 1px solid transparent;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: all 0.15s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #38393d;
+  color: #fff;
+  border-color:  #383938;
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.5);
+}
+
+.btn:active {
+  background-color: #77787c;
+  color: #fff;
+  border-color: #4a4c50;
+}
+
+.btn-primary {
+  background-color: #5a5d62;
+  color: #fff;
+  border-color: #505357;
+}
+
+.btn-primary:hover {
+  background-color: #54575e;
+  color: #fff;
+  border-color: #3f4043;
+}
+
+.btn-primary:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.5);
+}
+
+.btn-primary:active {
+  background-color: #46474c;
+  color: #fff;
+  border-color: #666a74;
+}
+
+
+</style> 
 
 </x-layout> 
 

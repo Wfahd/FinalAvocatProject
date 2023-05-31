@@ -1,520 +1,451 @@
+{{-- 
+@extends('layouts.app')
+@section('content')
 <x-layout bodyClass="g-sidenav-show  bg-gray-200">
-        <x-navbars.sidebar activePage="tables"></x-navbars.sidebar>
-        <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
-            <!-- Navbar -->
-            <x-navbars.navs.auth titlePage="Tables"></x-navbars.navs.auth>
-            <!-- End Navbar -->
-            <div class="container-fluid py-4">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card my-4">
-                            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-                                <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
-                                    <h6 class="text-white text-capitalize ps-3">Authors table</h6>
-                                </div>
-                            </div>
-                            <div class="card-body px-0 pb-2">
-                                <div class="table-responsive p-0">
-                                    <table class="table align-items-center mb-0">
-                                        <thead>
-                                            <tr>
-                                                <th
-                                                    class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                    Author</th>
-                                                <th
-                                                    class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                    Function</th>
-                                                <th
-                                                    class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                    Status</th>
-                                                <th
-                                                    class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                    Employed</th>
-                                                <th class="text-secondary opacity-7"></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    <div class="d-flex px-2 py-1">
-                                                        <div>
-                                                            <img src="{{ asset('assets') }}/img/team-2.jpg"
-                                                                class="avatar avatar-sm me-3 border-radius-lg"
-                                                                alt="user1">
-                                                        </div>
-                                                        <div class="d-flex flex-column justify-content-center">
-                                                            <h6 class="mb-0 text-sm">John Michael</h6>
-                                                            <p class="text-xs text-secondary mb-0">john@creative-tim.com
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <p class="text-xs font-weight-bold mb-0">Manager</p>
-                                                    <p class="text-xs text-secondary mb-0">Organization</p>
-                                                </td>
-                                                <td class="align-middle text-center text-sm">
-                                                    <span class="badge badge-sm bg-gradient-success">Online</span>
-                                                </td>
-                                                <td class="align-middle text-center">
-                                                    <span
-                                                        class="text-secondary text-xs font-weight-bold">23/04/18</span>
-                                                </td>
-                                                <td class="align-middle">
-                                                    <a href="javascript:;"
-                                                        class="text-secondary font-weight-bold text-xs"
-                                                        data-toggle="tooltip" data-original-title="Edit user">
-                                                        Edit
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="d-flex px-2 py-1">
-                                                        <div>
-                                                            <img src="{{ asset('assets') }}/img/team-3.jpg"
-                                                                class="avatar avatar-sm me-3 border-radius-lg"
-                                                                alt="user2">
-                                                        </div>
-                                                        <div class="d-flex flex-column justify-content-center">
-                                                            <h6 class="mb-0 text-sm">Alexa Liras</h6>
-                                                            <p class="text-xs text-secondary mb-0">
-                                                                alexa@creative-tim.com</p>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <p class="text-xs font-weight-bold mb-0">Programator</p>
-                                                    <p class="text-xs text-secondary mb-0">Developer</p>
-                                                </td>
-                                                <td class="align-middle text-center text-sm">
-                                                    <span class="badge badge-sm bg-gradient-secondary">Offline</span>
-                                                </td>
-                                                <td class="align-middle text-center">
-                                                    <span
-                                                        class="text-secondary text-xs font-weight-bold">11/01/19</span>
-                                                </td>
-                                                <td class="align-middle">
-                                                    <a href="javascript:;"
-                                                        class="text-secondary font-weight-bold text-xs"
-                                                        data-toggle="tooltip" data-original-title="Edit user">
-                                                        Edit
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="d-flex px-2 py-1">
-                                                        <div>
-                                                            <img src="{{ asset('assets') }}/img/team-4.jpg"
-                                                                class="avatar avatar-sm me-3 border-radius-lg"
-                                                                alt="user3">
-                                                        </div>
-                                                        <div class="d-flex flex-column justify-content-center">
-                                                            <h6 class="mb-0 text-sm">Laurent Perrier</h6>
-                                                            <p class="text-xs text-secondary mb-0">
-                                                                laurent@creative-tim.com</p>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <p class="text-xs font-weight-bold mb-0">Executive</p>
-                                                    <p class="text-xs text-secondary mb-0">Projects</p>
-                                                </td>
-                                                <td class="align-middle text-center text-sm">
-                                                    <span class="badge badge-sm bg-gradient-success">Online</span>
-                                                </td>
-                                                <td class="align-middle text-center">
-                                                    <span
-                                                        class="text-secondary text-xs font-weight-bold">19/09/17</span>
-                                                </td>
-                                                <td class="align-middle">
-                                                    <a href="javascript:;"
-                                                        class="text-secondary font-weight-bold text-xs"
-                                                        data-toggle="tooltip" data-original-title="Edit user">
-                                                        Edit
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="d-flex px-2 py-1">
-                                                        <div>
-                                                            <img src="{{ asset('assets') }}/img/team-3.jpg"
-                                                                class="avatar avatar-sm me-3 border-radius-lg"
-                                                                alt="user4">
-                                                        </div>
-                                                        <div class="d-flex flex-column justify-content-center">
-                                                            <h6 class="mb-0 text-sm">Michael Levi</h6>
-                                                            <p class="text-xs text-secondary mb-0">
-                                                                michael@creative-tim.com</p>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <p class="text-xs font-weight-bold mb-0">Programator</p>
-                                                    <p class="text-xs text-secondary mb-0">Developer</p>
-                                                </td>
-                                                <td class="align-middle text-center text-sm">
-                                                    <span class="badge badge-sm bg-gradient-success">Online</span>
-                                                </td>
-                                                <td class="align-middle text-center">
-                                                    <span
-                                                        class="text-secondary text-xs font-weight-bold">24/12/08</span>
-                                                </td>
-                                                <td class="align-middle">
-                                                    <a href="javascript:;"
-                                                        class="text-secondary font-weight-bold text-xs"
-                                                        data-toggle="tooltip" data-original-title="Edit user">
-                                                        Edit
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="d-flex px-2 py-1">
-                                                        <div>
-                                                            <img src="{{ asset('assets') }}/img/team-2.jpg"
-                                                                class="avatar avatar-sm me-3 border-radius-lg"
-                                                                alt="user5">
-                                                        </div>
-                                                        <div class="d-flex flex-column justify-content-center">
-                                                            <h6 class="mb-0 text-sm">Richard Gran</h6>
-                                                            <p class="text-xs text-secondary mb-0">
-                                                                richard@creative-tim.com</p>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <p class="text-xs font-weight-bold mb-0">Manager</p>
-                                                    <p class="text-xs text-secondary mb-0">Executive</p>
-                                                </td>
-                                                <td class="align-middle text-center text-sm">
-                                                    <span class="badge badge-sm bg-gradient-secondary">Offline</span>
-                                                </td>
-                                                <td class="align-middle text-center">
-                                                    <span
-                                                        class="text-secondary text-xs font-weight-bold">04/10/21</span>
-                                                </td>
-                                                <td class="align-middle">
-                                                    <a href="javascript:;"
-                                                        class="text-secondary font-weight-bold text-xs"
-                                                        data-toggle="tooltip" data-original-title="Edit user">
-                                                        Edit
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="d-flex px-2 py-1">
-                                                        <div>
-                                                            <img src="{{ asset('assets') }}/img/team-4.jpg"
-                                                                class="avatar avatar-sm me-3 border-radius-lg"
-                                                                alt="user6">
-                                                        </div>
-                                                        <div class="d-flex flex-column justify-content-center">
-                                                            <h6 class="mb-0 text-sm">Miriam Eric</h6>
-                                                            <p class="text-xs text-secondary mb-0">
-                                                                miriam@creative-tim.com</p>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <p class="text-xs font-weight-bold mb-0">Programator</p>
-                                                    <p class="text-xs text-secondary mb-0">Developer</p>
-                                                </td>
-                                                <td class="align-middle text-center text-sm">
-                                                    <span class="badge badge-sm bg-gradient-secondary">Offline</span>
-                                                </td>
-                                                <td class="align-middle text-center">
-                                                    <span
-                                                        class="text-secondary text-xs font-weight-bold">14/09/20</span>
-                                                </td>
-                                                <td class="align-middle">
-                                                    <a href="javascript:;"
-                                                        class="text-secondary font-weight-bold text-xs"
-                                                        data-toggle="tooltip" data-original-title="Edit user">
-                                                        Edit
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card my-4">
-                            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-                                <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
-                                    <h6 class="text-white text-capitalize ps-3">Projects table</h6>
-                                </div>
-                            </div>
-                            <div class="card-body px-0 pb-2">
-                                <div class="table-responsive p-0">
-                                    <table class="table align-items-center justify-content-center mb-0">
-                                        <thead>
-                                            <tr>
-                                                <th
-                                                    class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                    Project</th>
-                                                <th
-                                                    class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                    Budget</th>
-                                                <th
-                                                    class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                    Status</th>
-                                                <th
-                                                    class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
-                                                    Completion</th>
-                                                <th></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    <div class="d-flex px-2">
-                                                        <div>
-                                                            <img src="{{ asset('assets') }}/img/small-logos/logo-asana.svg"
-                                                                class="avatar avatar-sm rounded-circle me-2"
-                                                                alt="spotify">
-                                                        </div>
-                                                        <div class="my-auto">
-                                                            <h6 class="mb-0 text-sm">Asana</h6>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <p class="text-sm font-weight-bold mb-0">$2,500</p>
-                                                </td>
-                                                <td>
-                                                    <span class="text-xs font-weight-bold">working</span>
-                                                </td>
-                                                <td class="align-middle text-center">
-                                                    <div class="d-flex align-items-center justify-content-center">
-                                                        <span class="me-2 text-xs font-weight-bold">60%</span>
-                                                        <div>
-                                                            <div class="progress">
-                                                                <div class="progress-bar bg-gradient-info"
-                                                                    role="progressbar" aria-valuenow="60"
-                                                                    aria-valuemin="0" aria-valuemax="100"
-                                                                    style="width: 60%;"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td class="align-middle">
-                                                    <button class="btn btn-link text-secondary mb-0">
-                                                        <i class="fa fa-ellipsis-v text-xs"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="d-flex px-2">
-                                                        <div>
-                                                            <img src="{{ asset('assets') }}/img/small-logos/github.svg"
-                                                                class="avatar avatar-sm rounded-circle me-2"
-                                                                alt="invision">
-                                                        </div>
-                                                        <div class="my-auto">
-                                                            <h6 class="mb-0 text-sm">Github</h6>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <p class="text-sm font-weight-bold mb-0">$5,000</p>
-                                                </td>
-                                                <td>
-                                                    <span class="text-xs font-weight-bold">done</span>
-                                                </td>
-                                                <td class="align-middle text-center">
-                                                    <div class="d-flex align-items-center justify-content-center">
-                                                        <span class="me-2 text-xs font-weight-bold">100%</span>
-                                                        <div>
-                                                            <div class="progress">
-                                                                <div class="progress-bar bg-gradient-success"
-                                                                    role="progressbar" aria-valuenow="100"
-                                                                    aria-valuemin="0" aria-valuemax="100"
-                                                                    style="width: 100%;"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td class="align-middle">
-                                                    <button class="btn btn-link text-secondary mb-0"
-                                                        aria-haspopup="true" aria-expanded="false">
-                                                        <i class="fa fa-ellipsis-v text-xs"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="d-flex px-2">
-                                                        <div>
-                                                            <img src="{{ asset('assets') }}/img/small-logos/logo-atlassian.svg"
-                                                                class="avatar avatar-sm rounded-circle me-2" alt="jira">
-                                                        </div>
-                                                        <div class="my-auto">
-                                                            <h6 class="mb-0 text-sm">Atlassian</h6>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <p class="text-sm font-weight-bold mb-0">$3,400</p>
-                                                </td>
-                                                <td>
-                                                    <span class="text-xs font-weight-bold">canceled</span>
-                                                </td>
-                                                <td class="align-middle text-center">
-                                                    <div class="d-flex align-items-center justify-content-center">
-                                                        <span class="me-2 text-xs font-weight-bold">30%</span>
-                                                        <div>
-                                                            <div class="progress">
-                                                                <div class="progress-bar bg-gradient-danger"
-                                                                    role="progressbar" aria-valuenow="30"
-                                                                    aria-valuemin="0" aria-valuemax="30"
-                                                                    style="width: 30%;"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td class="align-middle">
-                                                    <button class="btn btn-link text-secondary mb-0"
-                                                        aria-haspopup="true" aria-expanded="false">
-                                                        <i class="fa fa-ellipsis-v text-xs"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="d-flex px-2">
-                                                        <div>
-                                                            <img src="{{ asset('assets') }}/img/small-logos/bootstrap.svg"
-                                                                class="avatar avatar-sm rounded-circle me-2"
-                                                                alt="webdev">
-                                                        </div>
-                                                        <div class="my-auto">
-                                                            <h6 class="mb-0 text-sm">Bootstrap</h6>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <p class="text-sm font-weight-bold mb-0">$14,000</p>
-                                                </td>
-                                                <td>
-                                                    <span class="text-xs font-weight-bold">working</span>
-                                                </td>
-                                                <td class="align-middle text-center">
-                                                    <div class="d-flex align-items-center justify-content-center">
-                                                        <span class="me-2 text-xs font-weight-bold">80%</span>
-                                                        <div>
-                                                            <div class="progress">
-                                                                <div class="progress-bar bg-gradient-info"
-                                                                    role="progressbar" aria-valuenow="80"
-                                                                    aria-valuemin="0" aria-valuemax="80"
-                                                                    style="width: 80%;"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td class="align-middle">
-                                                    <button class="btn btn-link text-secondary mb-0"
-                                                        aria-haspopup="true" aria-expanded="false">
-                                                        <i class="fa fa-ellipsis-v text-xs"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="d-flex px-2">
-                                                        <div>
-                                                            <img src="{{ asset('assets') }}/img/small-logos/logo-slack.svg"
-                                                                class="avatar avatar-sm rounded-circle me-2"
-                                                                alt="slack">
-                                                        </div>
-                                                        <div class="my-auto">
-                                                            <h6 class="mb-0 text-sm">Slack</h6>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <p class="text-sm font-weight-bold mb-0">$1,000</p>
-                                                </td>
-                                                <td>
-                                                    <span class="text-xs font-weight-bold">canceled</span>
-                                                </td>
-                                                <td class="align-middle text-center">
-                                                    <div class="d-flex align-items-center justify-content-center">
-                                                        <span class="me-2 text-xs font-weight-bold">0%</span>
-                                                        <div>
-                                                            <div class="progress">
-                                                                <div class="progress-bar bg-gradient-success"
-                                                                    role="progressbar" aria-valuenow="0"
-                                                                    aria-valuemin="0" aria-valuemax="0"
-                                                                    style="width: 0%;"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td class="align-middle">
-                                                    <button class="btn btn-link text-secondary mb-0"
-                                                        aria-haspopup="true" aria-expanded="false">
-                                                        <i class="fa fa-ellipsis-v text-xs"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="d-flex px-2">
-                                                        <div>
-                                                            <img src="{{ asset('assets') }}/img/small-logos/devto.svg"
-                                                                class="avatar avatar-sm rounded-circle me-2" alt="xd">
-                                                        </div>
-                                                        <div class="my-auto">
-                                                            <h6 class="mb-0 text-sm">Devto</h6>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <p class="text-sm font-weight-bold mb-0">$2,300</p>
-                                                </td>
-                                                <td>
-                                                    <span class="text-xs font-weight-bold">done</span>
-                                                </td>
-                                                <td class="align-middle text-center">
-                                                    <div class="d-flex align-items-center justify-content-center">
-                                                        <span class="me-2 text-xs font-weight-bold">100%</span>
-                                                        <div>
-                                                            <div class="progress">
-                                                                <div class="progress-bar bg-gradient-success"
-                                                                    role="progressbar" aria-valuenow="100"
-                                                                    aria-valuemin="0" aria-valuemax="100"
-                                                                    style="width: 100%;"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td class="align-middle">
-                                                    <button class="btn btn-link text-secondary mb-0"
-                                                        aria-haspopup="true" aria-expanded="false">
-                                                        <i class="fa fa-ellipsis-v text-xs"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <x-footers.auth></x-footers.auth>
-            </div>
-        </main>
-        <x-plugins></x-plugins>
+<<<<<<< HEAD
 
+<main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+    <!-- Navbar -->
+    <h2 class="text-decoration-underline fw-bolder p-4">List of My Clients</h2>
+=======
+<div class="container pt-4">
+    <div class="text-center">
+        <h2 class="fw-bolder p-4 mx-auto" style="font-size: 2em;">List of My Clients</h2>
+      </div>
+      
+    @if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+    @endif
+    <table class="table" width="100%" >
+
+        <thead class="thead-dark">
+            <tr style=" border-collapse: collapse;">
+                <th  scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Status</th>
+                <th scope="col">Sex</th>
+                <th scope="col">Actions</th>
+                <th scope="col">Les affaires</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($clients as $item)
+            
+            @if(Auth::user()->id == $item->user_id)
+            <tr>
+                <th>{{$item->id}}</th>
+                <td>{{$item->name}}</td>
+                <td>{{$item->lastName}}</td>
+                <td>{{$item->email}}</td>
+                <td>{{$item->phone}}</td>
+                <td>{{$item->status}}</td>
+                <td>{{$item->sex}}</td>
+              
+                <td >
+                    <div class="row">
+                    <div class="col ">
+
+                    <form  action="{{ route('clients.destroy', $item->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-outline-danger fw-bold">
+                            <i class="bi bi-trash"></i> Delete
+                        </button>
+                    </form></div>
+                    <div class="col pr-5">
+                    <a href="{{ route('clients.edit', $item->id) }}" class="btn btn-outline-primary fw-bold ">
+                        Edit
+                    </a></div>
+                    </div>
+                </td>
+                <td>
+                    <a href="{{ route('Affaires.cases', ['id' => $item->id]) }}" class="btn btn-primary">Voir Les Affaires</a>
+                </td>
+            </tr>
+            @endif
+            @endforeach
+        </tbody>
+    </table>
+    <div class="text-center">
+            <a href="/MyClients/create" class="btn btn-outline-success fw-bold">Add New Client</a>
+            <a href="/MyClients/Affaires/createCase" class=" btn btn-outline-success fw-bold">Add New Affaire</a>
+        
+    </div>
 </x-layout>
+
+    @endsection
+    
+    
+
+ 
+
+
+
+
+    
+<<<<<<< HEAD
+
+=======
+@endsection
+</x-layout> 
+ --}}
+
+
+ <x-layout bodyClass="g-sidenav-show  bg-gray-200">
+    <x-navbars.sidebar activePage='dashboard'></x-navbars.sidebar>
+    
+    <main class="main-content position-relative max-height-vh-200 h-200 border-radius-lg ">
+                <x-navbars.navs.auth titlePage="My Clients"></x-navbars.navs.auth>
+
+
+ <div class="container pt-4">
+     <div class="text-center">
+         <h2 class="fw-bolder p-4 mx-auto" style="font-size: 2em;">List of My Clients</h2>
+       </div>
+ @if(session('success'))
+ <div class="alert alert-success">
+     {{ session('success') }}
+ </div>
+@endif
+
+<table class="table w-full">
+ <thead class="bg-gray-900 text-white">
+     <tr>
+         <th scope="col">#</th>
+         <th scope="col">Name</th>
+         <th scope="col">Last Name</th>
+         <th scope="col">Email</th>
+         <th scope="col">Phone</th>
+         <th scope="col">Status</th>
+         <th scope="col">Sex</th>
+         <th scope="col">Actions</th>
+         <th scope="col">Les affaires</th>
+     </tr>
+ </thead>
+
+ <tbody>
+     @foreach ($clients as $item)
+         @if(Auth::user()->id == $item->user_id)
+             <tr>
+                 <th>{{ $item->id }}</th>
+                 <td>{{ $item->name }}</td>
+                 <td>{{ $item->lastName }}</td>
+                 <td>{{ $item->email }}</td>
+                 <td>{{ $item->phone }}</td>
+                 <td>{{ $item->status }}</td>
+                 <td>{{ $item->sex }}</td>
+                 <td>
+                    <div class="row">
+
+                      <form class="col" action="{{ route('clients.destroy', $item->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="px-4 py-2 bg-white text-dark rounded-md mr-4 border-none">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </form>
+                    
+                    
+                        <a href="{{ route('clients.edit', $item->id) }}" class="col fa fa-pencil-square-o px-4 py-2 bg-white-200 text-dark rounded-md"></a>
+                    </div>
+                    
+                
+                     {{-- <div class="row">
+
+                         <form class="col"  action="{{ route('clients.destroy', $item->id) }}" method="POST">
+                             @csrf
+                             @method('DELETE')
+                             <button type="submit" class="px-4 py-2 bg-red-600 text-white rounded-md">
+                                 <i class="fa fa-trash text-danger"></i> 
+                             </button>
+                         </form>
+                         <a href="{{ route('clients.edit', $item->id) }}" class="col fa fa-pencil-square-o px-4 py-2 bg-blue-600 text-white rounded-md"></a>
+                     </div>
+                 </td>--}}
+                 <td>
+
+                     <a href="{{ route('Affaires.cases', ['id' => $item->id]) }}" class="btn-secondary px-4 py-2 bg-info text-white rounded-md">Voir les Affaires</a>
+                 </td>
+                 
+
+             </tr>
+         @endif
+     @endforeach
+ </tbody>
+</table>
+
+<div class="flex justify-between">
+    <a href="/MyClients/create" class="bg-blue-500 hover:bg-blue-700  font-bold py-2 px-4 border border-gray-500 rounded">Add New Client</a>
+    <a href="/MyClients/Affaires/createCase" class="bg-blue-500 hover:bg-blue-700  font-bold py-2 px-4 border border-gray-500 rounded">Add New Affaire</a>
+    <a href="/MyClients/Affaires/archives" class="bg-blue-500 hover:bg-blue-700  font-bold py-2 px-4 border border-gray-500 rounded">Archived Cases</a>
+  </div>
+  
+</div>
+</main>
+<x-plugins></x-plugins>
+
+<style>
+ /* .container {
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.alert {
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  color: #155724;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border-radius: 0.25rem;
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529;
+  border-collapse: collapse;
+}
+
+.table td,
+.table th {
+  padding: 1rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+}
+
+.table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dee2e6;
+  background-color: #212529;
+  color: #fff;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.bg-gray-900 {
+  background-color: #1a202c;
+}
+
+.bg-gray-200 {
+  background-color: #edf2f7;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.fw-bolder {
+  font-weight: 700;
+}
+
+.max-height-vh-100 {
+  max-height: 100vh;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.border-radius-lg {
+  border-radius: 0.5rem;
+}
+
+.space-x-4 > * + * {
+  margin-left: 1rem;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.bg-red-600 {
+  background-color: #dc2626;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.rounded-md {
+  border-radius: 0.375rem;
+}
+
+.fa-trash {
+  font-family: "Font Awesome 5 Solid";
+  /* content: "\f2ed"; 
+
+
+.fa-pencil-square-o {
+  font-family: "Font Awesome 5 Solid";
+  /* content: "\f044"; 
+}*/
+
+.bg-white-600 {
+  background-color: #fff;
+}
+
+.text-dark {
+  color: #333;
+}
+
+.bg-primary {
+  background-color: #5a5e63;
+}
+
+.bg-green-600 {
+  background-color: #059669;
+}
+
+.bg-info {
+  background-color: #0dcaf0;
+}
+
+
+
+.flex {
+  display: flex;
+}
+
+/* .justify-between {
+  justify-content: space-between;
+} */
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+.bg-blue-500 {
+  background-color: #444648;
+}
+
+.bg-blue-700 {
+  background-color: #5e6169;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.border {
+  border-width: 1px;
+}
+
+.border-gray-500 {
+  border-color: #6b7280;
+}
+
+.rounded {
+  border-radius: 0.25rem;
+}
+
+.hover\:bg-blue-700:hover {
+  background-color: #35373b;
+}
+
+.btn {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #54565a;
+  color: #fff;
+  border: 1px solid transparent;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: all 0.15s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #38393d;
+  color: #fff;
+  border-color:  #383938;
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.5);
+}
+
+.btn:active {
+  background-color: #77787c;
+  color: #fff;
+  border-color: #4a4c50;
+}
+
+.btn-primary {
+  background-color: #5a5d62;
+  color: #fff;
+  border-color: #505357;
+}
+
+.btn-primary:hover {
+  background-color: #54575e;
+  color: #fff;
+  border-color: #3f4043;
+}
+
+.btn-primary:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.5);
+}
+
+.btn-primary:active {
+  background-color: #46474c;
+  color: #fff;
+  border-color: #666a74;
+}
+
+
+</style> 
+
+</x-layout> 
+
+

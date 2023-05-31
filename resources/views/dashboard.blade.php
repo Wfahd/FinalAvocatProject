@@ -8,8 +8,8 @@
         <!-- End Navbar -->
         <div class="container-fluid py-4">
             <div class="row">
-                <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-                    <div class="card">
+              <!--   <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+                   <div class="card">
                         <div class="card-header p-3 pt-2">
                             <div
                                 class="icon icon-lg icon-shape bg-gradient-dark shadow-dark text-center border-radius-xl mt-n4 position-absolute">
@@ -26,8 +26,8 @@
                                 lask week</p>
                         </div>
                     </div>
-                </div>
-                <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+                </div>-->
+                <div class="col-xl-4 col-sm-6 mb-xl-0 mb-4">
                     <div class="card">
                         <div class="card-header p-3 pt-2">
                             <div
@@ -35,18 +35,19 @@
                                 <i class="material-icons opacity-10">person</i>
                             </div>
                             <div class="text-end pt-1">
-                                <p class="text-sm mb-0 text-capitalize">Today's Users</p>
-                                <h4 class="mb-0">2,300</h4>
+                                <p class="text-sm mb-0 text-capitalize">clients number : </p>
+                                <h4 class="mb-0">You have {{ $clientCount }} clients. </h4>
                             </div>
                         </div>
                         <hr class="dark horizontal my-0">
                         <div class="card-footer p-3">
-                            <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+3% </span>than
-                                lask month</p>
+                            <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+5% </span>than
+                                yesterday</p>
                         </div>
+                      
                     </div>
                 </div>
-                <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+                <div class="col-xl-4 col-sm-6 mb-xl-0 mb-4">
                     <div class="card">
                         <div class="card-header p-3 pt-2">
                             <div
@@ -54,18 +55,33 @@
                                 <i class="material-icons opacity-10">person</i>
                             </div>
                             <div class="text-end pt-1">
-                                <p class="text-sm mb-0 text-capitalize">New funcking Clients</p>
-                                <h4 class="mb-0">3,462</h4>
+                                <div class="clients-list">
+                                    <p class="text-sm mb-0 text-capitalize">affaire number: </p>
+
+
+                                    @foreach ($casesCount as $client)
+                                    <div class="client">
+                                        <div class="row">
+                                         <div class="col">   <h4 class="client-name pr-3">{{ $client->name }} :  </h4></div>
+                                         <div class="col">  <h4 class="case-count text-danger pr-3"> {{ $client->case_count }} </h4></div>
+                                        </div>
+                                       
+                                    </div>
+                                    @endforeach
+                                </div>
+                                
+
                             </div>
                         </div>
                         <hr class="dark horizontal my-0">
                         <div class="card-footer p-3">
-                            <p class="mb-0"><span class="text-danger text-sm font-weight-bolder">-2%</span> than
+                            <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+5% </span>than
                                 yesterday</p>
                         </div>
+                        
                     </div>
                 </div>
-                <div class="col-xl-3 col-sm-6">
+                <div class="col-xl-4 col-sm-6">
                     <div class="card">
                         <div class="card-header p-3 pt-2">
                             <div
@@ -73,8 +89,18 @@
                                 <i class="material-icons opacity-10">weekend</i>
                             </div>
                             <div class="text-end pt-1">
-                                <p class="text-sm mb-0 text-capitalize">Sales</p>
-                                <h4 class="mb-0">$103,430</h4>
+                                <div class="clients-list">
+                                    @foreach ($clients as $client)
+                                    <div class="client">
+                                        <h4 class="client-name col ">{{ $client->name }}</h4>
+                                        <ul class="case-count col">
+                                            <li>Completed Cases: {{ $client->completed_cases }}</li>
+                                            <li>In Progress Cases: {{ $client->in_progress_cases }}</li>
+                                        </ul>
+                                    </div>
+                                    @endforeach
+                                </div>
+                                
                             </div>
                         </div>
                         <hr class="dark horizontal my-0">
@@ -96,7 +122,7 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <h6 class="mb-0 ">Website Views</h6>
+                            <h6 class="mb-0 ">Daily Clients</h6>
                             <p class="text-sm ">Last Campaign Performance</p>
                             <hr class="dark horizontal">
                             <div class="d-flex ">
@@ -116,7 +142,7 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <h6 class="mb-0 "> Daily Sales </h6>
+                            <h6 class="mb-0 "> ases Sales </h6>
                             <p class="text-sm "> (<span class="font-weight-bolder">+15%</span>) increase in today
                                 sales. </p>
                             <hr class="dark horizontal">
@@ -568,6 +594,11 @@
     </main>
     <x-plugins></x-plugins>
     </div>
+    <style>
+        .container-fluid{
+            background-image: url('https://www.freepik.com/free-photo/court-hammer-books-judgment-law-concept_8760908.htm#query=law%20background&position=27&from_view=keyword&track=ais')
+        }
+    </style>
     @push('js')
     <script src="{{ asset('assets') }}/js/plugins/chartjs.min.js"></script>
     <script>
@@ -818,6 +849,7 @@
         });
 
     </script>
+    
     @endpush
 </x-layout>
 

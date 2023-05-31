@@ -13,10 +13,12 @@ class ClientsController extends Controller
      */
     public function index()
     {
-
-          return view('MyClients.index')
-          ->with('clients', Client::get());
+        $activePage = 'tables'; // Set the active page to 'my-clients'
+        $clients = Client::get(); // Retrieve the clients data
+        
+        return view('MyClients.index', compact('clients', 'activePage'));
     }
+    
 
     /**
      * Show the form for creating a new resource.

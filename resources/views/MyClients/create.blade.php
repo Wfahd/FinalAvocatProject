@@ -11,7 +11,6 @@
 
     <div class="p-4 shadow-lg rounded-lg" >
 
-    <div class="p-4 shadow-lg rounded-lg" style="width: 150%">
 
 
       <h2 class="text-2xl text-primary text-center text-decoration-none mb-4">Add Client</h2>

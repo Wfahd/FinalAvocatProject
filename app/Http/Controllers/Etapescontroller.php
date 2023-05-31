@@ -15,8 +15,10 @@ class Etapescontroller extends Controller
     {
         $affaire = Affaire::findOrFail($id);
         $etapes = $affaire->etape;
-        return view('etapes.index', compact('affaire', 'etapes'));
+        
+        return response()->json($etapes);
     }
+    
 
     /**
      * Show the form for creating a new resource.
@@ -41,8 +43,10 @@ class Etapescontroller extends Controller
         ]);
 
         $case = $etape->Affaire;
+        $id =  $case->id ; 
 
-        return redirect('/MyClients');
+
+        return redirect()->route('etapes.create', ['id' => $id]);
     }
 
     /**

@@ -9,10 +9,11 @@
   .bottom-footer {
     bottom: -3% !important;
   }
-
+  
   .page-header{
     overflow:scroll !important;
   }
+
  }
  .bottom-footer {
   bottom: 2%
@@ -105,6 +106,11 @@ select:-webkit-autofill:focus {
     scroll-behavior: smooth; } }
 
 body {
+  background-image: url('../img/wallpaperflare.com_wallpaper (4).jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  
   margin: 0;
   font-family: var(--bs-body-font-family);
   font-size: var(--bs-body-font-size);
@@ -17489,7 +17495,6 @@ pre[class*="language-"] {
   position: absolute; }
 
 .ps__rail-y {
-  display: none;
   opacity: 0;
   transition: background-color .2s linear, opacity .2s linear;
   -webkit-transition: background-color .2s linear, opacity .2s linear;
@@ -17501,7 +17506,6 @@ pre[class*="language-"] {
 
 .ps--active-x > .ps__rail-x,
 .ps--active-y > .ps__rail-y {
-  display: block;
   background-color: transparent; }
 
 .ps:hover > .ps__rail-x,
@@ -17510,7 +17514,8 @@ pre[class*="language-"] {
 .ps--focus > .ps__rail-y,
 .ps--scrolling-x > .ps__rail-x,
 .ps--scrolling-y > .ps__rail-y {
-  opacity: 0.6; }
+  opacity: 0.6; 
+}
 
 .ps .ps__rail-x:hover,
 .ps .ps__rail-y:hover,

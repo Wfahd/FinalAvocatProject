@@ -31,7 +31,7 @@ public function client(){
 }
 
 public function Etape(){
-    return $this->hasOne(Etape::class);
+    return $this->hasMany(Etape::class);
 }
 
 
