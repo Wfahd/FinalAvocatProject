@@ -48,12 +48,15 @@ Route::resource('/MyClients/Affaires/etapes', Etapescontroller::class);
 Route::get('/MyClients/Affaires/etapes/{id}', [Etapescontroller::class, 'index'])->name('etapes.index');
 Route::get('/MyClients/Affaires/etapes/add/{id}', [Etapescontroller::class, 'create'] )->name('etapes.create'); 
 Route::post('/MyClients/Affaires/etapes/store/{id}', [Etapescontroller::class, 'store'] )->name('etapes.store'); 
+Route::get('/MyClients/Affaires/etapes/edit', [Etapescontroller::class, 'edit'] )->name('etapes.edit'); 
 
 
 Route::resource('/MyClients/Affaires/archives', ArchiveController::class); 
 
 Route::post('/cases/archive/{id}', [AffairesController::class, 'archive'])->name('affaires.archive');
 
+Route::post('/cases/archive/{id}', [AffairesController::class, 'archive'])->name('cases.archive');
+Route::get('/etapes/{id}/edit', [EtapesController::class, 'edit'])->name('etapes.edit');
 
 
 Route::get('/MyClients', [ClientsController::class, 'index'])->name('MyClients');

@@ -8,6 +8,7 @@
                 <head>
                     <title>Archived Cases</title>
                     <link href="https://unpkg.com/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
+                    <style></style>
                 </head>
                 <body class="bg-gray-100">
                     <div class="container mx-auto my-8">

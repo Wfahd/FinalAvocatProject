@@ -1,4 +1,3 @@
-
 <x-layout bodyClass="g-sidenav-show bg-gray-200">
     <x-navbars.sidebar activePage='dashboard'></x-navbars.sidebar>
 
@@ -14,8 +13,11 @@
             <div class="border-b-2 border-gray-300 pb-4 mb-4">
                 <p class="text-gray-700"><strong>Description:</strong> {{$affaire->Description}}</p>
                 <p class="text-gray-700"><strong>Notes:</strong> {{$etapes->notes}}</p>
-                <a href="#" class="text-blue-500 hover:underline">View Document</a>
+                <p class="text-gray-700"><strong>Next Step</strong> {{$etapes->next_steps}}</p>
+                <a href="#" class=" ">View Document</a>
+
             </div>
+
             <div class="flex justify-between items-center mb-2">
                 <p class="text-gray-700"><strong>Assigned to:</strong> {{$affaire->client->name}} {{$affaire->client->lastName}}</p>
                 <p class="text-gray-700"><strong>Status:</strong> {{$affaire->status}}</p>
@@ -33,29 +35,38 @@
             </form>
             
 
-            <script>
-                const progressItem = document.getElementById("progress-item");
-                const editButton = document.getElementById("edit-button");
-
-                // Set initial state of progress item to not editable
-                progressItem.contentEditable = false;
-
-                // Add click event listener to edit button
-                editButton.addEventListener("click", () => {
-                    if (progressItem.contentEditable === "true") {
-                        // Disable editing mode
-                        progressItem.contentEditable = false;
-                        editButton.textContent = "Edit";
-                    } else {
-                        // Enable editing mode
-                        progressItem.contentEditable = true;
-                        editButton.textContent = "Save";
-                    }
-                });
-            </script>
+           
             
 
         </div>
     </div>
 </main>
+<style>
+    .progress-item {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    #edit-button {
+        float: right;
+        margin-left: 10px;
+        background-color: blueviolet;
+        color: white;
+    }
+
+    button[type=submit] {
+        background-color: blueviolet;
+        color: white;
+        font-weight: bold;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    button[type=submit]:hover {
+        background-color: #aaa;
+    }
+</style>
+
 </x-layout>
